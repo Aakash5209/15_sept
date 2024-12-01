@@ -94,3 +94,117 @@
 // console.log(getChunk([1,2,3,4,5,6,7,8,9],3))
 
 
+// function customMap(arr,cb){
+//   let res = []
+//   for(let i =0;i<arr.length;i++){
+//     // let op = cb(arr[i])
+//     res.push(cb(arr[i]))
+//   }
+//   return res
+// }
+
+// console.log(customMap([1,2,3,4,5],x=>x*2))
+
+// function customFilter(arr,cb){
+//   let res = []
+//   for(let num of arr){
+//     let op = cb(num)
+//     if(op){
+//       res.push(num)
+//     }
+//     // if(cb(num)){
+//     //   res.push(num)
+//     // }
+//   }
+//   return res
+// }
+
+// console.log(customFilter([1,2,3,4,5],x=>x%2===0))
+
+
+// function customReduce(arr,cb,init){
+//   let acc = init
+//   for(let num of arr){
+//     acc = cb(acc,num)
+//   }
+//   return acc
+// }
+
+// // const sum =(x,y)=>x+y
+// function sum(x,y){
+//   return x+y
+// }
+
+// console.log(customReduce([1,2,3,4,5],sum,0))
+
+
+// function seconedLarge(arr){
+//   let max1 = -1
+//   let max2 =-1
+//   for(let num of arr){
+//     if( num>max1){
+//       max2 =max1
+//       max1= num
+//     }
+//     else if(max1 != num && num>max2){
+//       max2 = num
+//     }
+//   }
+//   if(max2==-1 && max1!= -1){
+//     console.log("max1-",max1,"max2- none",)  
+//   }
+//   else if(max1 == -1 && max2 == -1){
+//     console.log("max1- none","max2- none",)  
+
+//   }
+//   else{
+//     console.log("max1-",max1,"max2-",max2)  
+//   }
+  
+// }
+// seconedLarge([10])
+
+
+
+
+// function getFreq(arr){
+//   let freq = {}
+//   for(let num of arr){
+//     if(freq[num]){
+//       freq[num]++
+//     }
+//     else{
+//       freq[num] = 1
+
+//     }
+//   }
+//   return freq
+
+// }
+// console.log(getFreq(['ab','abc','ab','cd','ab','ab']))
+
+
+
+// function getFreq(arr){
+//  return arr.reduce((acc,cur)=>{
+//     if(acc[cur]){
+//       acc[cur]++
+//     }
+//     else{
+//       acc[cur] =1
+
+//     }
+//     return acc
+//   },{})
+// }
+
+// console.log(getFreq(['ab','abc','ab','cd','ab','ab']))
+function getFreq(arr){
+ return arr.reduce((acc,cur)=>{
+   acc[cur] = (acc[cur] || 0) +1
+    return acc
+  },{})
+}
+
+console.log(getFreq(['ab','abc','ab','cd','ab','ab']))
+
